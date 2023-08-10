@@ -26,3 +26,68 @@ Keep in mind that this approach assumes that the points are aligned vertically a
 
 <img width="535" alt="image" src="https://github.com/mrcoolnoob/isosceles-trapezoid/assets/127330572/cdf49df2-2e43-4da2-bed9-70a97dcc6a69">
 
+
+## C Implementation
+
+```
+using System;
+
+class IsoscelesTrapezoidValidation
+{
+    // Define the trapezoid's vertices
+    static double x1 = /* Vertex A's x-coordinate */;
+    static double y1 = /* Vertex A's y-coordinate */;
+    static double x2 = /* Vertex B's x-coordinate */;
+    static double y2 = /* Vertex B's y-coordinate */;
+    static double x3 = /* Vertex C's x-coordinate */;
+    static double y3 = /* Vertex C's y-coordinate */;
+    static double x4 = /* Vertex D's x-coordinate */;
+    static double y4 = /* Vertex D's y-coordinate */;
+
+    // Check if a point (x, y) is within the trapezoid
+    static bool IsPointWithinTrapezoid(double x, double y)
+    {
+        bool horizontalCheck = false;
+        bool verticalCheck = false;
+
+        // Calculate slopes and y-intercepts of the trapezoid's sides
+        double mAB = (y2 - y1) / (x2 - x1);
+        double bAB = y1 - mAB * x1;
+
+        double mCD = (y4 - y3) / (x4 - x3);
+        double bCD = y3 - mCD * x3;
+
+        // Check if the point passes the horizontal test
+        if (y >= mAB * x + bAB && y >= mCD * x + bCD)
+        {
+            horizontalCheck = true;
+
+            // Check if the point passes the vertical test
+            if (y <= y1 && y >= y4)
+            {
+                verticalCheck = true;
+            }
+        }
+
+        return horizontalCheck && verticalCheck;
+    }
+
+    static void Main()
+    {
+        double pointX = /* Your point's x-coordinate */;
+        double pointY = /* Your point's y-coordinate */;
+
+        bool isWithinTrapezoid = IsPointWithinTrapezoid(pointX, pointY);
+
+        if (isWithinTrapezoid)
+        {
+            Console.WriteLine("The point is within the trapezoid.");
+        }
+        else
+        {
+            Console.WriteLine("The point is outside the trapezoid.");
+        }
+    }
+}
+```
+
