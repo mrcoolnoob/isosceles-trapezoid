@@ -22,3 +22,7 @@ In mathematical terms:
 This formulaic approach helps determine if the line formed by the points falls within the range of slopes created by the trapezoid's non-parallel sides. If the condition is met, the points are located within the isosceles trapezoid; otherwise, they lie outside its boundaries.
 
 Keep in mind that this approach assumes that the points are aligned vertically along the y-axis and that the trapezoid's sides are parallel to the x-axis. If the orientation is different, further adjustments to the formula may be necessary.
+
+
+![Uploading image.png…]()
+
