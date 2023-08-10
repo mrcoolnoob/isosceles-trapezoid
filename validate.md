@@ -91,3 +91,51 @@ class IsoscelesTrapezoidValidation
 }
 ```
 
+Maybe this below
+
+```
+using System;
+
+class IsoscelesTrapezoidValidation
+{
+    static void Main()
+    {
+        double x1 = /* Vertex A's x-coordinate */;
+        double y1 = /* Vertex A's y-coordinate */;
+        double x2 = /* Vertex B's x-coordinate */;
+        double y2 = /* Vertex B's y-coordinate */;
+        double x3 = /* Vertex C's x-coordinate */;
+        double y3 = /* Vertex C's y-coordinate */;
+        double x4 = /* Vertex D's x-coordinate */;
+        double y4 = /* Vertex D's y-coordinate */;
+
+        double pointX = /* Your point's x-coordinate */;
+        double pointY = /* Your point's y-coordinate */;
+
+        bool isWithinTrapezoid = IsPointWithinTrapezoid(x1, y1, x2, y2, x3, y3, x4, y4, pointX, pointY);
+
+        if (isWithinTrapezoid)
+        {
+            Console.WriteLine("The point is within the trapezoid.");
+        }
+        else
+        {
+            Console.WriteLine("The point is outside the trapezoid.");
+        }
+    }
+
+    static bool IsPointWithinTrapezoid(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4, double pointX, double pointY)
+    {
+        // Calculate the slopes of the parallel sides
+        double mAB = (y2 - y1) / (x2 - x1);
+        double mCD = (y4 - y3) / (x4 - x3);
+
+        // Calculate the corresponding y-coordinates on the parallel sides at the given x-coordinate
+        double yAB = mAB * (pointX - x1) + y1;
+        double yCD = mCD * (pointX - x3) + y3;
+
+        // Check if the point's y-coordinate falls within the range of the parallel sides
+        return pointY >= yCD && pointY <= yAB;
+    }
+}
+```
