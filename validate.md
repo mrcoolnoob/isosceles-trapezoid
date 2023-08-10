@@ -24,5 +24,5 @@ This formulaic approach helps determine if the line formed by the points falls w
 Keep in mind that this approach assumes that the points are aligned vertically along the y-axis and that the trapezoid's sides are parallel to the x-axis. If the orientation is different, further adjustments to the formula may be necessary.
 
 
-![Uploading image.png…]()
+<img width="535" alt="image" src="https://github.com/mrcoolnoob/isosceles-trapezoid/assets/127330572/cdf49df2-2e43-4da2-bed9-70a97dcc6a69">
 
